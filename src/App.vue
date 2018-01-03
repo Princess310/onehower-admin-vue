@@ -7,18 +7,21 @@
         <router-view></router-view>
       </v-container>
     </v-content>
+    <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
 import Drawer from '@/components/Drawer';
 import Toolbar from '@/components/Toolbar';
+import Footer from '@/components/Footer';
 
 export default {
   name: 'app',
   components: {
     'app-drawer': Drawer,
     'app-toolbar': Toolbar,
+    'app-footer': Footer,
   },
 };
 </script>
