@@ -1,28 +1,10 @@
 <template>
-  <v-app id="app">
-    <app-drawer></app-drawer>
-    <app-toolbar></app-toolbar>
-    <v-content>
-      <v-container fluid fill-height>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
-    <app-footer></app-footer>
-  </v-app>
+  <router-view></router-view>
 </template>
 
 <script>
-import Drawer from '@/components/Drawer';
-import Toolbar from '@/components/Toolbar';
-import Footer from '@/components/Footer';
-
 export default {
-  name: 'app',
-  components: {
-    'app-drawer': Drawer,
-    'app-toolbar': Toolbar,
-    'app-footer': Footer,
-  },
+  name: 'root',
 };
 </script>
 

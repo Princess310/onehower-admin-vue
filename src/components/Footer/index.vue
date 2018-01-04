@@ -2,6 +2,7 @@
   <v-footer
     app
     dark
+    fixed
     color="cyan"
   >
     <div class="desc white--text">{{copyInfo}}</div>

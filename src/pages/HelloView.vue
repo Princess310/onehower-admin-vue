@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'hello-view',
   data() {
     return {
       msg: 'Welcome to onehower admin page',
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .hello {
   width: 100%;
   text-align: center;
