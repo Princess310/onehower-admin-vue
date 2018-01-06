@@ -11,6 +11,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     openDrawer: false,
+    currentUser: null,
   },
   mutations,
   actions,

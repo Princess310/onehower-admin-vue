@@ -6,8 +6,8 @@
         <v-card-text>
           <v-text-field
             label="username"
-            v-model="name"
-            :rules="[() => name.length > 0 || 'This field is required']"
+            v-model="username"
+            :rules="[() => username.length > 0 || 'This field is required']"
             required
           ></v-text-field>
           <v-text-field
@@ -20,7 +20,7 @@
         </v-card-text>
         <v-card-actions class="white">
           <v-layout justify-end>
-            <v-btn flat color="cyan">Login</v-btn>
+            <v-btn flat color="cyan" @click="handleLogin">Login</v-btn>
           </v-layout>
         </v-card-actions>
       </v-card>
@@ -33,9 +33,32 @@ export default {
   name: 'login-view',
   data() {
     return {
-      name: '',
+      username: '',
       password: '',
     };
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.currentUser;
+    },
+  },
+  watch: {
+    currentUser(user) {
+      if (user && user.id) {
+        const { query: { redirect } } = this.$route;
+        const path = redirect || '/';
+
+        this.$router.replace(path);
+      }
+    },
+  },
+  methods: {
+    handleLogin() {
+      this.$store.dispatch('login', {
+        username: this.username,
+        password: this.password,
+      });
+    },
   },
 };
 </script>
